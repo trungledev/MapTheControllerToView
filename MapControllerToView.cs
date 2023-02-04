@@ -21,11 +21,22 @@ public class GameController : Controller
 {
     public void Start()
     {
-        var sucessResult = View(new object[] { "Start game", "TowerHaNoi", 12345 });
-        if(!sucessResult)
+        try
+        {
+            var sucessResult = View(new object[] { "Start game", "TowerHaNoi", 12345 });
+            if (!sucessResult)
+            {
+                //Wtrite log error in View()
+
+            }
+
+        }
+        catch (Exception ex)
         {
             //Wtrite log error in View()
+            Console.WriteLine("Error throw Exception: " +ex.Message);
         }
+
     }
 }
 public class Controller
